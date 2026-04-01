@@ -1,6 +1,5 @@
 import numpy
 from testInput import testInput
-import cProfile
 
 
 def blend():
@@ -25,20 +24,20 @@ def blend():
             imed = int(med)
             if imed == med:
                 med = imed
-            print(med)
+            # print(med)
         elif action == "r":
             if item not in nums:
-                print("Wrong!")
+                # print("Wrong!")
+                pass
             else:
                 nums.remove(item)
                 if not nums:
-                    print("Wrong!")
+                    # print("Wrong!")
+                    pass
                 else:
                     med = numpy.median(nums)
                     imed = int(med)
                     if imed == med:
                         med = imed
-                    print(med)
+                    # print(med)
 
-
-cProfile.run('blend()')
