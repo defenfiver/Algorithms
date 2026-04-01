@@ -2,6 +2,7 @@ import numpy
 from testInput import testInput
 import cProfile
 
+
 def blend():
     # x = int(input())
     x = 10000
@@ -38,5 +39,6 @@ def blend():
                     if imed == med:
                         med = imed
                     print(med)
+
 
 cProfile.run('blend()')
