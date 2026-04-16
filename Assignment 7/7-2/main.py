@@ -1,4 +1,4 @@
-def f(arr, N, limit):
+def f(arr, limit):
     arr.sort()
     total = 0
     while True:
@@ -15,9 +15,7 @@ def f(arr, N, limit):
         total = tmp * arr[0]
     return total
 
-46.61
-18.4
-15
+
 if __name__ == "__main__":
     n = int(input())
     for i in range(n):
@@ -28,4 +26,4 @@ if __name__ == "__main__":
         tmp_nums = input().split(" ")
         for j in tmp_nums:
             nums.append(int(j))
-        print(f(nums, types, speed_limit))
+        print(f(nums, speed_limit))
