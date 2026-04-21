@@ -1,31 +1,46 @@
-import numpy
-x = int(input())
-nums, inputs = [], []
-for i in range(x):
-    tmp = input().split(" ")
-    inputs.append([tmp[0], int(tmp[1])])
+from sortedcontainers import SortedList
 
-for i in range(x):
-    num = inputs[i]
-    action = num[0]
-    item = num[1]
-    if action == "a":
-        nums.append(item)
-        med = numpy.median(nums)
-        imed = int(med)
-        if imed == med:
-            med = imed
-        print(med)
-    elif action == "r":
-        if item not in nums:
-            print("Wrong!")
-        else:
-            nums.remove(item)
-            if not nums:
+
+def median(nums: SortedList):
+    length = len(nums)
+    middle = length // 2
+    if length % 2 == 0:
+        return (nums[middle - 1] + nums[middle]) / 2
+    else:
+        return nums[middle]
+
+
+def blend():
+    x = int(input())
+    inputs = []
+    nums = SortedList()
+    for i in range(x):
+        tmp = input().split(" ")
+        inputs.append([tmp[0], int(tmp[1])])
+
+    for i in range(x):
+        num = inputs[i]
+        action = num[0]
+        item = num[1]
+        if action == "a":
+            nums.add(item)
+            med = median(nums)
+            imed = int(med)
+            if imed == med:
+                med = imed
+            print(med)
+        elif action == "r":
+            if item not in nums:
                 print("Wrong!")
             else:
-                med = numpy.median(nums)
-                imed = int(med)
-                if imed == med:
-                    med = imed
-                print(med)
+                nums.discard(item)
+                if not nums:
+                    print("Wrong!")
+                else:
+                    med = median(nums)
+                    imed = int(med)
+                    if imed == med:
+                        med = imed
+                    print(med)
+
+blend()

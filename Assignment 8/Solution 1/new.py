@@ -1,6 +1,3 @@
-from testInput import testInput
-
-
 def median(nums):
     nums = sorted(nums)
     length = len(nums)
@@ -12,15 +9,10 @@ def median(nums):
 
 
 def blend():
-    # x = int(input())
-    x = 10000
+    x = int(input())
     nums, inputs = [], []
-    # for i in range(x):
-    #     tmp = input().split(" ")
-    #     inputs.append([tmp[0], int(tmp[1])])
-    tmpInput = testInput().split("\n")
     for i in range(x):
-        tmp = tmpInput[i].split(" ")
+        tmp = input().split(" ")
         inputs.append([tmp[0], int(tmp[1])])
 
     for i in range(x):
@@ -33,19 +25,17 @@ def blend():
             imed = int(med)
             if imed == med:
                 med = imed
-            # print(med)
+            print(med)
         elif action == "r":
             if item not in nums:
-                # print("Wrong!")
-                pass
+                print("Wrong!")
             else:
                 nums.remove(item)
                 if not nums:
-                    # print("Wrong!")
-                    pass
+                    print("Wrong!")
                 else:
                     med = median(nums)
                     imed = int(med)
                     if imed == med:
                         med = imed
-                    # print(med)
+                    print(med)
