@@ -1,0 +1,5 @@
+In command prompt (not powershell)
+
+python3 -m cProfile -o time main.py < input.txt
+
+snakeviz time
